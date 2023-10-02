@@ -1,0 +1,21 @@
+{
+  "id": 58357,
+  "libraryId": 58115,
+  "referenceNumber": "test",
+  "name": "tets",
+  "materialType": "test",
+  "compositionDetails": "test",
+  "tagResponseList": [],
+  "fixedTagResponseList": [],
+  "colorResponseList": [
+    {
+      "id": 72306,
+      "code": "17-1112 TCX",
+      "hexCode": "#9b8f7f",
+      "name": "Weathered Teak",
+      "pantoneColorId": 104,
+      "colorType": "SOLID",
+      "representedBy": "test"
+    }
+  ]
+}

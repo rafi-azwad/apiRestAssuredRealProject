@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="none">
+    <test name="Initial Costing List">
+        <!--        <parameter name="browser" value="firefox" />-->
+        <classes>
+            <class name="testRunner.apiRunner.costing.CosGetInitialCostingListTests" />
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,28 @@
+package dbEntity.setting;
+
+public enum SettingType {
+
+	EXPLORE_DESIGN_COLLECTIONS(0),
+	INITIAL_SEARCH_SUGGESTIONS(1),
+	MAIL_FREQUENCY(2),
+	BILLING_ADDRESS(3),
+	SHIPPING_ADDRESS(4),
+	BILLING_AND_SHIPPING_ADDRESS(5),
+	NITEX_INVOICE_ADDRESS(6),
+	MOQ(7),
+	TURN_AROUND_TIME(8),
+	NITEX_BANK_DETAILS(9),
+	FOB_TEXT( 10 ),
+	CIF_TEXT(11),
+	NITEX_BENEFICIARY_DETAILS(12),
+	SYSTEM_PREFERENCES(13),
+	TOKEN_INVALID_BEFORE(14),
+	;
+
+	private Integer settingType;
+
+	SettingType( Integer ordinal ){
+
+		this.settingType = ordinal;
+	}
+}

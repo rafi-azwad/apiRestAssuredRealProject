@@ -1,0 +1,101 @@
+./gradlew automationAPITest -DType=collectionCrud
+./gradlew automationAPITest -DType=collectionMy
+./gradlew automationAPITest -DType=collectionFilterCat
+./gradlew automationAPITest -DType=collectionPostPin
+./gradlew automationAPITest -DType=collectionPostUnPin
+./gradlew automationAPITest -DType=collectionGetStatus
+./gradlew automationAPITest -DType=collectionGetSingleMember
+./gradlew automationAPITest -DType=collectionGetProducts
+./gradlew automationAPITest -DType=collectionGetDownloadReport
+./gradlew automationAPITest -DType=collectionGetUserNEmailType
+./gradlew automationAPITest -DType=collectionGetUserSearch
+./gradlew automationAPITest -DType=collectionGetMaterialSeason
+./gradlew automationAPITest -DType=collectionGetFabricType
+./gradlew automationAPITest -DType=collectionGetAllBrand
+./gradlew automationAPITest -DType=collectionGetAllMaterialSeason
+./gradlew automationAPITest -DType=collectionGetSubCategory
+./gradlew automationAPITest -DType=collectionGetOrganogramSample
+./gradlew automationAPITest -DType=collectionGetSampleDev
+./gradlew automationAPITest -DType=collectionPostShare
+./gradlew automationAPITest -DType=collectionPostLike
+./gradlew automationAPITest -DType=collectionPostQuoteReq
+./gradlew automationAPITest -DType=collectionPostSendToBd
+./gradlew automationAPITest -DType=collectionPostPersonalSet
+./gradlew automationAPITest -DType=collectionPostPhotoReq
+./gradlew automationAPITest -DType=collectionPostSampleReq
+./gradlew automationAPITest -DType=collectionGetProductSearch
+./gradlew automationAPITest -DType=collectionPostBulkReq
+./gradlew automationAPITest -DType=collectionDelete
+
+
+-------------Costing-------------------
+./gradlew automationAPITest -DType=costingRunFetch
+./gradlew automationAPITest -DType=costingCopyProduct
+./gradlew automationAPITest -DType=costingAddVariant
+./gradlew automationAPITest -DType=costingProcessAll
+./gradlew automationAPITest -DType=costingAdd
+./gradlew automationAPITest -DType=costingQuantityAdd
+./gradlew automationAPITest -DType=costingQtyWiseSend
+./gradlew automationAPITest -DType=costingArchive
+./gradlew automationAPITest -DType=costingIntCosting
+./gradlew automationAPITest -DType=cosGetBrandAllPage
+./gradlew automationAPITest -DType=costingGetBrandAllPageStatus
+./gradlew automationAPITest -DType=cosGetQuoteSingle
+./gradlew automationAPITest -DType=cosGetQuoteMembers
+./gradlew automationAPITest -DType=cosGetQuoteReqAll
+./gradlew automationAPITest -DType=cosGetQuoteReqSingle
+./gradlew automationAPITest -DType=cosGetQuoteSearch
+./gradlew automationAPITest -DType=cosGetInitialCosDesignCount
+./gradlew automationAPITest -DType=cosGetInitialCostingList
+./gradlew automationAPITest -DType=cosGetFabricType
+------Design And Edit---------
+./gradlew automationAPITest -DType=designEditAddProducts
+./gradlew automationAPITest -DType=designAddProductV2
+./gradlew automationAPITest -DType=designProductRemove
+./gradlew automationAPITest -DType=designDownloadLink
+./gradlew automationAPITest -DType=designPresentationLink
+./gradlew automationAPITest -DType=designPretSequence
+./gradlew automationAPITest -DType=dgnProDevComNew
+./gradlew automationAPITest -DType=designProMesSizeCat
+./gradlew automationAPITest -DType=designInspirationStyle
+./gradlew automationAPITest -DType=designProMeasurementRmv
+./gradlew automationAPITest -DType=designDocgroupAdd
+./gradlew automationAPITest -DType=designArtBoardAdd
+./gradlew automationAPITest -DType=designGetProDevCom
+./gradlew automationAPITest -DType=designGetProMeasure
+./gradlew automationAPITest -DType=designGetProMeasureUnit
+./gradlew automationAPITest -DType=designGetTagsType
+./gradlew automationAPITest -DType=designGetArtBoardCanvas
+./gradlew automationAPITest -DType=designGetPresentPhoto
+./gradlew automationAPITest -DType=designPutProStyleInfo
+./gradlew automationAPITest -DType=designPutMaterialUpdate
+./gradlew automationAPITest -DType=designPutProDocPinned
+./gradlew automationAPITest -DType=designPutProDocUnPinned
+------Sample---------
+./gradlew automationAPITest -DType=sampleGetReqCount
+./gradlew automationAPITest -DType=sampleGetReqAll
+./gradlew automationAPITest -DType=sampleGetReqMembers
+./gradlew automationAPITest -DType=sampleGetRequest
+./gradlew automationAPITest -DType=sampleGetFindByEmail
+./gradlew automationAPITest -DType=sampleGetProductMaterial
+./gradlew automationAPITest -DType=samplePostMeasurement
+./gradlew automationAPITest -DType=samplePostReqCompleteActivity
+./gradlew automationAPITest -DType=samplePutReqItemActivity
+------Sample---------
+./gradlew automationAPITest -DType=photoGetDesignCount
+./gradlew automationAPITest -DType=photoGetAll
+./gradlew automationAPITest -DType=photoGetSearch
+./gradlew automationAPITest -DType=photoGetUserSearch
+./gradlew automationAPITest -DType=photoPostGroupAdd
+./gradlew automationAPITest -DType=photoPostUpload
+
+
+
+
+
+web
+./gradlew automationWEBTest -DType=webLogin -DBrowser=chrome
+./gradlew automationWEBTest -DType=createOrder -DBrowser=firefox
+
+
+ ./test also

@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="none">
+    <test name="Filter Based on Shared">
+        <!--        <parameter name="featureName" value="collectionCreate.feature" />-->
+        <!--        <parameter name="browser" value="firefox" />-->
+        <classes>
+            <class name="testRunner.webRunner.searchAndFilterInCollectionListPage.CucumberRunnerTest" />
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,20 @@
+{
+  "id": 29304,
+  "fabricUnitCost": 1,
+  "trimsCost": 1.1,
+  "accessoriesCost": 1.5,
+  "washCost": 1.3,
+  "embellishmentCost": 2.2,
+  "commercialCost": 1.7,
+  "cmCost": 0.4,
+  "testingCost": 0.6,
+  "allowance": 1.8,
+  "totalCost": 8.3859786,
+  "priceLastModifiedAt": "2023-05-17T04:27:43",
+  "priceLastModifiedBy": "Mohammad Auhiduzzaman",
+  "variation": "Single jersey, 100% Viscose, 200 GSM ",
+  "isQuoted": true,
+  "moq": "500",
+  "baseSize": "l",
+  "initialCostingId": 29304
+}

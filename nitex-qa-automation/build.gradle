@@ -1,0 +1,375 @@
+plugins {
+    id 'org.springframework.boot' version '3.0.2'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('hibernate.version', "6.1.7.Final")
+}
+
+
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'org.testng', name: 'testng', version: '6.14.3'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.9'
+    implementation 'org.json:json:20160810'
+    implementation 'io.rest-assured:rest-assured:5.0.1'
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.5.3'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.1.0'
+    // https://mvnrepository.com/artifact/io.appium/java-client
+    implementation group: 'io.appium', name: 'java-client', version: '8.3.0'
+    implementation group: 'org.apache.poi', name: 'poi', version: '3.9'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
+    testImplementation 'io.cucumber:cucumber-java:6.10.0'
+    testImplementation 'io.cucumber:cucumber-testng:6.10.0'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.10'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'com.vladmihalcea:hibernate-types-60:2.20.0'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+}
+
+task automationAPITest(type: Test) {
+    useTestNG() {
+        useDefaultListeners = true
+        scanForTestClasses = false
+        testLogging.showStandardStreams = true
+        systemProperties project.properties.subMap(["Type"])
+        String testValue = System.getProperty("Type");
+        System.out.println("tested :" + testValue)
+
+
+        ///////////COLLECTION/////////////
+
+        if (testValue.equals("collectionCreate")) {
+            suites "src/test/resources/Suite/Collection/collectionCreate.xml"
+        } else if (testValue.equals("collectionFetch")) {
+            suites "src/test/resources/Suite/Collection/collectionFetch.xml"
+        } else if (testValue.equals("collectionUpdate")) {
+            suites "src/test/resources/Suite/Collection/collectionUpdate.xml"
+        } else if (testValue.equals("collectionMy")) {
+            suites "src/test/resources/Suite/Collection/collectionMy.xml"
+        } else if (testValue.equals("collectionFilterCat")) {
+            suites "src/test/resources/Suite/Collection/collectionFilterCat.xml"
+        } else if (testValue.equals("collectionPostPin")) {
+            suites "src/test/resources/Suite/Collection/collectionPostPin.xml"
+        } else if (testValue.equals("collectionPostUnPin")) {
+            suites "src/test/resources/Suite/Collection/collectionPostUnPin.xml"
+        } else if (testValue.equals("collectionGetStatus")) {
+            suites "src/test/resources/Suite/Collection/collectionGetStatus.xml"
+        } else if (testValue.equals("collectionGetSingleMember")) {
+            suites "src/test/resources/Suite/Collection/collectionGetSingleMember.xml"
+        } else if (testValue.equals("collectionGetProducts")) {
+            suites "src/test/resources/Suite/Collection/collectionGetProducts.xml"
+        } else if (testValue.equals("collectionGetDownloadReport")) {
+            suites "src/test/resources/Suite/Collection/collectionGetDownloadReport.xml"
+        } else if (testValue.equals("collectionGetUserNEmailType")) {
+            suites "src/test/resources/Suite/Collection/collectionGetUserNEmailType.xml"
+        } else if (testValue.equals("collectionGetUserSearch")) {
+            suites "src/test/resources/Suite/Collection/collectionGetUserSearch.xml"
+        } else if (testValue.equals("collectionGetMaterialSeason")) {
+            suites "src/test/resources/Suite/Collection/collectionGetMaterialSeason.xml"
+        } else if (testValue.equals("collectionGetFabricType")) {
+            suites "src/test/resources/Suite/Collection/collectionGetFabricType.xml"
+        } else if (testValue.equals("collectionGetAllBrand")) {
+            suites "src/test/resources/Suite/Collection/collectionGetAllBrand.xml"
+        } else if (testValue.equals("collectionGetAllMaterialSeason")) {
+            suites "src/test/resources/Suite/Collection/collectionGetAllMaterialSeason.xml"
+        } else if (testValue.equals("collectionGetSubCategory")) {
+            suites "src/test/resources/Suite/Collection/collectionGetSubCategory.xml"
+        } else if (testValue.equals("collectionGetOrganogramSample")) {
+            suites "src/test/resources/Suite/Collection/collectionGetOrganogramSample.xml"
+        } else if (testValue.equals("collectionGetSampleDev")) {
+            suites "src/test/resources/Suite/Collection/collectionGetSampleDev.xml"
+        } else if (testValue.equals("collectionPostShare")) {
+            suites "src/test/resources/Suite/Collection/collectionPostShare.xml"
+        } else if (testValue.equals("collectionPostLike")) {
+            suites "src/test/resources/Suite/Collection/collectionPostLike.xml"
+        } else if (testValue.equals("collectionPostQuoteReq")) {
+            suites "src/test/resources/Suite/Collection/collectionPostQuoteReq.xml"
+        } else if (testValue.equals("collectionPostSendToBd")) {
+            suites "src/test/resources/Suite/Collection/collectionPostSendToBd.xml"
+        } else if (testValue.equals("collectionPostPersonalSet")) {
+            suites "src/test/resources/Suite/Collection/collectionPostPersonalSet.xml"
+        } else if (testValue.equals("collectionPostPhotoReq")) {
+            suites "src/test/resources/Suite/Collection/collectionPostPhotoReq.xml"
+        } else if (testValue.equals("collectionPostSampleReq")) {
+            suites "src/test/resources/Suite/Collection/collectionPostSampleReq.xml"
+        } else if (testValue.equals("collectionGetProductSearch")) {
+            suites "src/test/resources/Suite/Collection/collectionGetProductSearch.xml"
+        } else if (testValue.equals("collectionPostBulkReq")) {
+            suites "src/test/resources/Suite/Collection/collectionPostBulkReq.xml"
+        } else if (testValue.equals("collectionDelete")) {
+            suites "src/test/resources/Suite/Collection/collectionDelete.xml"
+        } else if (testValue.equals("collectionAll")) {
+            suites "src/test/resources/Suite/Collection/collectionAll.xml"
+        }
+
+        //////////COSTING//////////////
+        else if (testValue.equals("costingRunFetch")) {
+            suites "src/test/resources/Suite/Costing/costingFetch.xml"
+        } else if (testValue.equals("costingRemarksUpdate")) {
+            suites "src/test/resources/Suite/Costing/costingUpdate.xml"
+        } else if (testValue.equals("costingCopyProduct")) {
+            suites "src/test/resources/Suite/Costing/costingCopyProduct.xml"
+        } else if (testValue.equals("costingAddVariant")) {
+            suites "src/test/resources/Suite/Costing/costingAddVariant.xml"
+        } else if (testValue.equals("costingProcessAll")) {
+            suites "src/test/resources/Suite/Costing/costingProcessAll.xml"
+        } else if (testValue.equals("costingAdd")) {
+            suites "src/test/resources/Suite/Costing/costingAdd.xml"
+        } else if (testValue.equals("cosGetQuantityWise")) {
+            suites "src/test/resources/Suite/Costing/cosGetQuantityWise.xml"
+        } else if (testValue.equals("costingQtyWiseSend")) {
+            suites "src/test/resources/Suite/Costing/costingQtyWise.xml"
+        } else if (testValue.equals("costingArchive")) {
+            suites "src/test/resources/Suite/Costing/costingArchive.xml"
+        } else if (testValue.equals("cosGetInitialCostingSingle")) {
+            suites "src/test/resources/Suite/Costing/cosGetInitialCostingSingle.xml"
+        } else if (testValue.equals("costingGetBrandAllPageStatus")) {
+            suites "src/test/resources/Suite/Costing/cosGetBrandAllPageStatus.xml"
+        } else if (testValue.equals("costingGetBrandAllPage")) {
+            suites "src/test/resources/Suite/Costing/cosGetBrandAllPage.xml"
+        } else if (testValue.equals("cosGetQuoteSingle")) {
+            suites "src/test/resources/Suite/Costing/cosGetQuoteSingle.xml"
+        } else if (testValue.equals("cosGetQuoteMembers")) {
+            suites "src/test/resources/Suite/Costing/cosGetQuoteMembers.xml"
+        } else if (testValue.equals("cosGetQuoteReqCount")) {
+            suites "src/test/resources/Suite/Costing/cosGetQuoteReqCount.xml"
+        } else if (testValue.equals("cosGetQuoteReqAll")) {
+            suites "src/test/resources/Suite/Costing/cosGetQuoteReqAll.xml"
+        } else if (testValue.equals("cosGetQuoteReqSingle")) {
+            suites "src/test/resources/Suite/Costing/cosGetQuoteReqSingle.xml"
+        } else if (testValue.equals("cosGetQuoteSearch")) {
+            suites "src/test/resources/Suite/Costing/cosGetQuoteSearch.xml"
+        } else if (testValue.equals("cosGetInitialCosDesignCount")) {
+            suites "src/test/resources/Suite/Costing/cosGetInitialCosDesignCount.xml"
+        } else if (testValue.equals("cosGetInitialCostingList")) {
+            suites "src/test/resources/Suite/Costing/cosGetInitialCostingList.xml"
+        } else if (testValue.equals("cosGetFabricType")) {
+            suites "src/test/resources/Suite/Costing/cosGetFabricType.xml"
+        } else if (testValue.equals("cosPutUpdateVariant")) {
+            suites "src/test/resources/Suite/Costing/cosPutUpdateVariant.xml"
+        } else if (testValue.equals("costingAll")) {
+            suites "src/test/resources/Suite/Costing/costingAll.xml"
+        }
+
+        //////////DESIGN//////////////
+        else if (testValue.equals("designEditAddProduct")) {
+            suites "src/test/resources/Suite/DesignEdit/designEditAddProduct.xml"
+        } else if (testValue.equals("designAddProductV2")) {
+            suites "src/test/resources/Suite/DesignEdit/designAddProductV2.xml"
+        } else if (testValue.equals("designProductRemove")) {
+            suites "src/test/resources/Suite/DesignEdit/designEditProductRemove.xml"
+        } else if (testValue.equals("designPresentationLink")) {
+            suites "src/test/resources/Suite/DesignEdit/designPresentationLink.xml"
+        } else if (testValue.equals("designDownloadLink")) {
+            suites "src/test/resources/Suite/DesignEdit/designDownloadLink.xml"
+        } else if (testValue.equals("designPretSequence")) {
+            suites "src/test/resources/Suite/DesignEdit/designPretSequence.xml"
+        } else if (testValue.equals("dgnProDevComNew")) {
+            suites "src/test/resources/Suite/DesignEdit/designProDevComNew.xml"
+        } else if (testValue.equals("designProMeasurementRmv")) {
+            suites "src/test/resources/Suite/DesignEdit/designProMeasurementRmv.xml"
+        } else if (testValue.equals("designProMesSizeCat")) {
+            suites "src/test/resources/Suite/DesignEdit/designProMesSizeCat.xml"
+        } else if (testValue.equals("designInspirationStyle")) {
+            suites "src/test/resources/Suite/DesignEdit/designInspirationStyle.xml"
+        } else if (testValue.equals("designDocgroupAdd")) {
+            suites "src/test/resources/Suite/DesignEdit/designDocgroupAdd.xml"
+        } else if (testValue.equals("designFabricAdd")) {
+            suites "src/test/resources/Suite/DesignEdit/designFabricAdd.xml"
+        } else if (testValue.equals("designArtBoardAdd")) {
+            suites "src/test/resources/Suite/DesignEdit/designArtBoardAdd.xml"
+        } else if (testValue.equals("designGetProDevCom")) {
+            suites "src/test/resources/Suite/DesignEdit/designGetProDevCom.xml"
+        } else if (testValue.equals("designGetProMeasure")) {
+            suites "src/test/resources/Suite/DesignEdit/designGetProMeasure.xml"
+        } else if (testValue.equals("designGetProMeasureUnit")) {
+            suites "src/test/resources/Suite/DesignEdit/designGetProMeasureUnit.xml"
+        } else if (testValue.equals("designGetTagsType")) {
+            suites "src/test/resources/Suite/DesignEdit/designGetTagsType.xml"
+        } else if (testValue.equals("designGetArtBoardCanvas")) {
+            suites "src/test/resources/Suite/DesignEdit/designGetArtBoardCanvas.xml"
+        } else if (testValue.equals("designGetPresentPhoto")) {
+            suites "src/test/resources/Suite/DesignEdit/designGetPresentPhoto.xml"
+        } else if (testValue.equals("designPutProStyleInfo")) {
+            suites "src/test/resources/Suite/DesignEdit/designPutProStyleInfo.xml"
+        } else if (testValue.equals("designPutMaterialUpdate")) {
+            suites "src/test/resources/Suite/DesignEdit/designPutMaterialUpdate.xml"
+        } else if (testValue.equals("designPutProDocPinned")) {
+            suites "src/test/resources/Suite/DesignEdit/designPutProDocPinned.xml"
+        } else if (testValue.equals("designPutProDocUnPinned")) {
+            suites "src/test/resources/Suite/DesignEdit/designPutProDocUnPinned.xml"
+        } else if (testValue.equals("designAll")) {
+            suites "src/test/resources/Suite/DesignEdit/designAll.xml"
+        }
+
+
+        //////////SAMPLE//////////////
+        else if (testValue.equals("sampleGetReqCount")) {
+            suites "src/test/resources/Suite/Sample/sampleGetReqCount.xml"
+        } else if (testValue.equals("sampleGetReqAll")) {
+            suites "src/test/resources/Suite/Sample/sampleGetReqAll.xml"
+        } else if (testValue.equals("sampleGetReqMembers")) {
+            suites "src/test/resources/Suite/Sample/sampleGetReqMembers.xml"
+        } else if (testValue.equals("sampleGetRequest")) {
+            suites "src/test/resources/Suite/Sample/sampleGetRequest.xml"
+        } else if (testValue.equals("sampleGetFindByEmail")) {
+            suites "src/test/resources/Suite/Sample/sampleGetFindByEmail.xml"
+        } else if (testValue.equals("sampleGetProductMaterial")) {
+            suites "src/test/resources/Suite/Sample/sampleGetProductMaterial.xml"
+        }
+        else if (testValue.equals("samplePostMeasurement")) {
+            suites "src/test/resources/Suite/Sample/samplePostMeasurement.xml"
+        }
+        else if (testValue.equals("samplePostReqCompleteActivity")) {
+            suites "src/test/resources/Suite/Sample/samplePostReqCompleteActivity.xml"
+        }
+        else if (testValue.equals("samplePutReqItemActivity")) {
+            suites "src/test/resources/Suite/Sample/samplePutReqItemActivity.xml"
+        }
+        else if (testValue.equals("sampleAll")) {
+            suites "src/test/resources/Suite/Sample/sampleAll.xml"
+        }
+
+//////////////////////Photography////////////////////////////////////
+
+        else if (testValue.equals("photoGetDesignCount")) {
+            suites "src/test/resources/Suite/Photography/photoGetDesignCount.xml"
+        }
+        else if (testValue.equals("photoGetAll")) {
+            suites "src/test/resources/Suite/Photography/photoGetAll.xml"
+        }
+        else if (testValue.equals("photoGetSearch")) {
+            suites "src/test/resources/Suite/Photography/photoGetSearch.xml"
+        }
+        else if (testValue.equals("photoGetUserSearch")) {
+            suites "src/test/resources/Suite/Photography/photoGetUserSearch.xml"
+        }
+        else if (testValue.equals("photoPostGroupAdd")) {
+            suites "src/test/resources/Suite/Photography/photoPostGroupAdd.xml"
+        }
+        else if (testValue.equals("photoPostUpload")) {
+            suites "src/test/resources/Suite/Photography/photoPostUpload.xml"
+        }
+        else if (testValue.equals("photoAll")) {
+            suites "src/test/resources/Suite/Photography/photoAll.xml"
+        }
+
+
+        //////////////////////ORDER////////////////////////////////////
+        else if (testValue.equals("orderMembers")) {
+            suites "src/test/resources/Suite/Order/orderMembers.xml"
+        }
+
+
+
+    }
+
+//////////////////////WEB BASED AUTOMATION////////////////////////////////////
+
+    task automationWEBTest(type: Test) {
+
+        useTestNG() {
+            useDefaultListeners = true
+            scanForTestClasses = false
+            testLogging.showStandardStreams = true
+            systemProperties project.properties.subMap(["Type", "Browser"])
+            String testValue = System.getProperty("Type");
+            systemProperty 'Browser', System.getProperty('Browser')
+
+
+            if (testValue.equals("webLogin")) {
+                suites "src/test/resources/Suite/webSuite/login.xml"
+            } else if (testValue.equals("editSytle")) {
+
+                suites "src/test/resources/Suite/webSuite/editStyle.xml"
+            }
+            if (testValue.equals("createCollection")) {
+                suites "src/test/resources/Suite/webSuite/createCollection.xml"
+            }
+            if (testValue.equals("addDesign")) {
+                suites "src/test/resources/Suite/webSuite/addDesign.xml"
+            }
+            if (testValue.equals("deleteBeforeUpdate")) {
+                suites "src/test/resources/Suite/webSuite/deleteBeforeUpdate.xml"
+            }
+            if (testValue.equals("UpdateDesignInformation")) {
+                suites "src/test/resources/Suite/webSuite/updateDesignInformation.xml"
+            }
+            if (testValue.equals("deleteUpdateDesign")) {
+                suites "src/test/resources/Suite/webSuite/deleteUpdateDesign.xml"
+            }
+            if (testValue.equals("createOrder")) {
+                suites "src/test/resources/Suite/webSuite/createOrder.xml"
+            }
+            if (testValue.equals("searchCollection")) {
+                suites "src/test/resources/Suite/webSuite/searchCollection.xml"
+            }
+            if (testValue.equals("searchByDesignNumber")) {
+                suites "src/test/resources/Suite/webSuite/searchCollectionBasedDesignNumber.xml"
+            }
+            if (testValue.equals("sortNewest")) {
+                suites "src/test/resources/Suite/webSuite/sortingBasedOnNewestFirst.xml"
+            }
+            if (testValue.equals("sortLastModified")) {
+                suites "src/test/resources/Suite/webSuite/sortBasedOnLastModified.xml"
+            } else if (testValue.equals("clearSort")) {
+                suites "src/test/resources/Suite/webSuite/clearSortingOption.xml"
+            } else if (testValue.equals("clearSearchValue")) {
+                suites "src/test/resources/Suite/webSuite/clearSearchValue.xml"
+            } else if (testValue.equals("filterBasedOnMine")) {
+                suites "src/test/resources/Suite/webSuite/filterBasedOnMine.xml"
+            } else if (testValue.equals("filterBasedOnShared")) {
+                suites "src/test/resources/Suite/webSuite/filterBasedOnShared.xml"
+            } else if (testValue.equals("filterBasedOnDevelopment")) {
+                suites "src/test/resources/Suite/webSuite/filterBasedOnDevelopment.xml"
+            } else if (testValue.equals("filterBasedOnCompleteAndPublished")) {
+                suites "src/test/resources/Suite/webSuite/filterBasedOnCompleteAndPub.xml"
+            } else if (testValue.equals("filterBasedOnStatusNitexDesign")) {
+                suites "src/test/resources/Suite/webSuite/filterBasedOnStatus_NitexDesign.xml"
+            } else if (testValue.equals("filterBasedOnStatusPresentation")) {
+                suites "src/test/resources/Suite/webSuite/filterBasedOnStatus_presentation.xml"
+            } else if (testValue.equals("filterBasedOnStatusBuyerRequest")) {
+                suites "src/test/resources/Suite/webSuite/filterBasedOnStatus_BuyerRequest.xml"
+            }
+            else if(testValue.equals("filterBasedOnCategory")){
+                suites "src/test/resources/Suite/webSuite/filterBasedOnCategory_Jacket.xml"
+            }
+            else if(testValue.equals("filterBasedOnCategoryZipPolo")){
+                suites "src/test/resources/Suite/webSuite/filterBasedOnCategory_ZipPolo.xml"
+            }
+            else if(testValue.equals("filterBasedOnCategoryShirt")){
+                suites "src/test/resources/Suite/webSuite/filterBasedOnCategory_Shirt.xml"
+            }
+            else if(testValue.equals("filterBasedOnMarketGirls")){
+                suites "src/test/resources/Suite/webSuite/filterBasedOnMarket_girls.xml"
+            }
+            else if(testValue.equals("filterBasedOnMarketWoman")){
+                suites "src/test/resources/Suite/webSuite/filterBasedOnMarket_Woman.xml"
+            }
+            else if(testValue.equals("filterBasedOnMarketInfant")){
+                suites "src/test/resources/Suite/webSuite/filterBasedOnMarket_Infant.xml"
+            }
+
+        }
+    }
+
+}

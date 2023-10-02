@@ -1,0 +1,62 @@
+package testRunner.apiRunner.costing;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.Test;
+
+
+@CucumberOptions(
+        tags ="@smoke",
+        features = {
+                "src/test/resources/Features/ApiFeatures/Costing/costingAdd.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/costingAddVariant.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/costingArchive.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/costingCopyProduct.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/costingProcessFromAll.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/costingQtyWise.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/costingRunFetch.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/costingUpdateRemarks.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetBrandAllPageStatus.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetBrandAllPage.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetFabricType.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetInitialCosDesignCount.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetInitialCostingList.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetInitialCostingSingle.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetQuantityWise.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteMembers.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteReqAll.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteReqCount.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteReqSingle.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteSearch.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteSingle.feature",
+                "src/test/resources/Features/ApiFeatures/Costing/costingPutUpdateVariant.feature"
+
+
+        },
+        glue = {"stepDefinition"},
+        monochrome = true,
+        dryRun = false,
+        plugin = {
+                "pretty",
+                "html:build/reports/apiReports/costing/costingAll.html"
+        })
+@Test
+public class CostingAllTests extends AbstractTestNGCucumberTests {
+
+}
+
+//"src/test/resources/Features/ApiFeatures/Costing/costingRunFetch.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/costingUpdateRemarks.feature"
+// "src/test/resources/Features/ApiFeatures/Costing/cosGetBrandAllPage.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/cosGetBrandAllPageStatus.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteSingle.feature"
+// "src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteMembers.feature"
+// "src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteReqCount.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteReqAll.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteReqSingle.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/cosGetQuoteSearch.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/cosGetInitialCosDesignCount.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/cosGetInitialCostingList.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/cosGetFabricType.feature"
+//"src/test/resources/Features/ApiFeatures/Costing/costingPutUpdateVariant.feature"
+// "src/test/resources/Features/ApiFeatures/DesignEdit/designProductAddV2.feature"

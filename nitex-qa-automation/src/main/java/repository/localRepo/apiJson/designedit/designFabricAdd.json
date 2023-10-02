@@ -1,0 +1,12 @@
+{
+  "materialType": "MAIN_FABRIC",
+  "productId": 61280,
+  "fabricType": "DENIM",
+  "gsm": "200",
+  "construction": 407,
+  "fabricCompositionPartIdList": [
+    3804,
+    3798
+  ],
+  "deleteExistingId": 58356
+}

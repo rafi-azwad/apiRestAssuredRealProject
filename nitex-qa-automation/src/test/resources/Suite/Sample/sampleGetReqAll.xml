@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="none">
+    <test name="Sample Get Request All">
+        <!--        <parameter name="browser" value="firefox" />-->
+        <classes>
+            <class name="testRunner.apiRunner.sample.SampleGetReqAllTests" />
+        </classes>
+    </test>
+
+</suite>

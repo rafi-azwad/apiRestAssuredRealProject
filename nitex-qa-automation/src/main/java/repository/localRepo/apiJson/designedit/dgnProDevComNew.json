@@ -1,0 +1,15 @@
+{
+  "text": "re",
+  "artBoardId": 30516,
+  "postPositionNo": 1,
+  "productId": "61280",
+  "postType": "test",
+  "recipientList": [
+    {
+      "recipientType": "NITEX"
+    },
+    {
+      "recipientType": "BUYER"
+    }
+  ]
+}

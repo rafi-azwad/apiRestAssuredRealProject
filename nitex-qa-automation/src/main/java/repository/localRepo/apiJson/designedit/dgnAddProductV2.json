@@ -1,0 +1,20 @@
+{
+  "documentDTOList": [
+    {
+      "documentId": 159486,
+      "front": false
+    },
+    {
+      "documentId": 159487,
+      "front": true
+    },
+    {
+      "documentId": 159488,
+      "front": false
+    }
+  ],
+  "productSubCategoryId": 58,
+  "name": "SHIRT",
+  "productGroupId": "1",
+  "collectionId": "39167"
+}

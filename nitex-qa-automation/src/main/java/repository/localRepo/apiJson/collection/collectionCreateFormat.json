@@ -1,0 +1,12 @@
+{
+  "name": "Sample collection for QA",
+  "brandId": 1,
+  "season": "WINTER_23",
+  "tagRequestList": [
+    {
+      "text": "Winter"
+    }
+  ],
+  "isNitexCollection": true,
+  "privacy": "CUSTOM"
+}

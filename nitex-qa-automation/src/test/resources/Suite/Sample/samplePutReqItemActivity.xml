@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="none">
+    <test name="Sample PUT Request Item Activity">
+        <!--        <parameter name="browser" value="firefox" />-->
+        <classes>
+            <class name="testRunner.apiRunner.sample.SamplePutReqItemActivityTests" />
+        </classes>
+    </test>
+
+</suite>

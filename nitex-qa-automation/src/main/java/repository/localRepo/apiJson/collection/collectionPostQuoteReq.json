@@ -1,0 +1,9 @@
+{
+  "quoteItemRequest": [
+    {
+      "productId": 42460,
+      "requiredDate": "2023-05-16",
+      "quantity": "500,1000"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "sizeMappingList": [
+    {
+      "standardSize": "XXXS",
+      "standardSizeLabel": "3XS",
+      "mappingSize": "4XS"
+    }
+  ],
+  "productId": "61280"
+}

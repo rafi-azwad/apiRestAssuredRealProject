@@ -1,0 +1,13 @@
+{
+  "id": "38754",
+  "name": "Sample collection for QA update",
+  "brandId": 1,
+  "isNitexCollection": true,
+  "season": "WINTER_23",
+  "tagRequestList": [
+    {
+      "id": 10505,
+      "text": "Winter"
+    }
+  ]
+}
